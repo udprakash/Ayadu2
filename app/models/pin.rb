@@ -12,6 +12,10 @@ validates :weekly, numericality: true
 validates :monthly, numericality: true
 validates :advance, numericality: true
 
+def to_param
+	"#{id} #{title}".parameterize
+end
+
 searchable do
 	text :title, :description	
 end
